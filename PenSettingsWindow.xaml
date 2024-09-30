@@ -1,0 +1,54 @@
+﻿<Window x:Class="MultitouchAnnotations.PenSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Configurações da Caneta" Height="367" Width="400" ResizeMode="NoResize" WindowStartupLocation="Manual"
+        Background="Transparent" WindowStyle="None" AllowsTransparency="True">
+    <Border CornerRadius="20" Background="#F7F7F7" BorderBrush="#E0E0E0" BorderThickness="2">
+        <Grid>
+            <!-- Botão de fechar estilizado no canto superior direito -->
+            <Button Content="✖" 
+                    FontSize="14" 
+                    Background="Transparent" 
+                    Foreground="Red" 
+                    BorderBrush="Transparent" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Top" 
+                    Width="30" 
+                    Height="30"
+                    Click="CloseButton_Click"/>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Height="168">
+                <!-- Escolha da Cor com círculos como botões -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <!-- Definição dos botões de cores como círculos maiores, cada um sendo um botão -->
+                    <Ellipse Fill="Black" Width="40" Height="40" Stroke="Gray" StrokeThickness="1" MouseDown="ColorSelected_Click" Tag="Black" Margin="5"/>
+                    <Ellipse Fill="Red" Width="40" Height="40" Stroke="Gray" StrokeThickness="1" MouseDown="ColorSelected_Click" Tag="Red" Margin="5"/>
+                    <Ellipse Fill="Green" Width="40" Height="40" Stroke="Gray" StrokeThickness="1" MouseDown="ColorSelected_Click" Tag="Green" Margin="5"/>
+                    <Ellipse Fill="Blue" Width="40" Height="40" Stroke="Gray" StrokeThickness="1" MouseDown="ColorSelected_Click" Tag="Blue" Margin="5"/>
+                    <Ellipse Fill="Yellow" Width="40" Height="40" Stroke="Gray" StrokeThickness="1" MouseDown="ColorSelected_Click" Tag="Yellow" Margin="5"/>
+                    <Ellipse Fill="Purple" Width="40" Height="40" Stroke="Gray" StrokeThickness="1" MouseDown="ColorSelected_Click" Tag="Purple" Margin="5"/>
+                    <!-- Botão para abrir a paleta de cores -->
+                    <Button Content="🎨" Width="40" Height="40" Margin="5" Click="OpenColorPicker_Click"/>
+                </StackPanel>
+
+                <!-- Controle do Tamanho do Traço -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                    <TextBlock Text="Tamanho do Traço:" Width="119"/>
+                    <Slider Minimum="1" Maximum="10" Value="5" Width="226" ValueChanged="LineThicknessChanged"/>
+                </StackPanel>
+
+                <!-- Seleção do Tipo de Traço -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Width="334">
+                    <TextBlock Text="Tipo de Traço:" Width="113" Height="20"/>
+                    <ComboBox Width="219" SelectionChanged="LineTypeChanged">
+                        <ComboBoxItem Content="Sólida" IsSelected="True"/>
+                        <ComboBoxItem Content="Tracejada"/>
+                        <ComboBoxItem Content="Pontilhada"/>
+                        <ComboBoxItem Content="Traço e Ponto"/>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <Label Content="Parâmetros da Caneta" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        </Grid>
+    </Border>
+</Window>

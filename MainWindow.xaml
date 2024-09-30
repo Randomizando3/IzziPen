@@ -1,0 +1,19 @@
+﻿<Window x:Class="MultitouchAnnotations.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Whiteboard" WindowStyle="None" Background="Transparent" Topmost="True"  
+        ShowInTaskbar="False" WindowState="Maximized" AllowsTransparency="True" KeyDown="Window_KeyDown">
+    <Grid Background="Transparent">
+        <!-- InkCanvas para desenho -->
+        <InkCanvas Name="DrawingCanvas" Background="#01FFFFFF" IsHitTestVisible="True">
+            <!-- Path usado para aplicar estilos de traço (tracejado, pontilhado, etc.) -->
+            <Path Name="DrawingPath" Stroke="Black" StrokeThickness="5" />
+        </InkCanvas>
+
+        <!-- Label de aviso para versão trial -->
+        <Label x:Name="TrialVersionLabel" Content="Software em versão trial. Adquira uma solução UnionBoard para desfrutar de todos os recursos."
+               Foreground="Red" Background="Transparent" FontSize="32"
+               HorizontalAlignment="Left" VerticalAlignment="Top"
+               Margin="10" Visibility="Collapsed"/>
+    </Grid>
+</Window>

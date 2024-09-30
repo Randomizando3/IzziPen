@@ -1,0 +1,204 @@
+﻿<Window x:Class="MultitouchAnnotations.ResourcesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recursos" WindowStyle="None" Width="300" Height="325" Topmost="True"
+        ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True" ShowInTaskbar="False">
+
+    <Window.Resources>
+        <!-- Estilo para botões sem borda e aparência plana -->
+        <Style x:Key="FlatButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Padding" Value="7.5"/>
+            <Setter Property="Margin" Value="3.75"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Estilo para o botão de fechar (X) -->
+        <Style x:Key="CloseButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Red"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="18.75"/>
+            <Setter Property="Height" Value="18.75"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="White" CornerRadius="7.5" BorderThickness="0.75" BorderBrush="LightGray">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Cabeçalho com botão "X" para fechar a janela -->
+            <DockPanel Grid.Row="0" LastChildFill="False" Margin="0,3.75,0,0">
+                <TextBlock Text="  Recursos" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="10.5"/>
+                <Button Content="X" Style="{StaticResource CloseButtonStyle}" Click="CloseButton_Click" Width="20" DockPanel.Dock="Right"/>
+            </DockPanel>
+
+            <Grid Grid.Row="1" Margin="7.5,7.5,7.5,7.5">
+                <!-- Define 4 colunas -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Define 5 linhas -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Primeira linha de ícones -->
+                <Button Grid.Row="0" Grid.Column="0" Click="InteractiveActivities_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/phet.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Atividades Int." FontSize="7.5" Width="53"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="0" Grid.Column="1" Click="ThreeDResources_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/3d.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Recursos em 3D" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="0" Grid.Column="2" Click="GoogleEarth_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/earth.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Google Earth" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="0" Grid.Column="3" Click="SolarSystem_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/solar.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Sistema Solar" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Segunda linha de ícones -->
+                <Button Grid.Row="1" Grid.Column="0" Click="HumanAnatomyAtlas_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/humano.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Anatomia Humana" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="1" Grid.Column="1" Click="Calculator_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/calc.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Calculadora" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="1" Grid.Column="2" Click="VirtualKeyboard_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/keyboard.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Teclado Virtual" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="1" Grid.Column="3" Click="Stopwatch_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/stopwatch.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Cronômetro" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Terceira linha de ícones -->
+                <Button Grid.Row="2" Grid.Column="0" Click="ScreenBlock_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/screenblock.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Bloqueio de Tela" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="2" Grid.Column="1" Click="AudioRecorder_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/audiorecorder.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Gravador de Áudio" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="2" Grid.Column="2" Click="Camera_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/camera.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Câmera" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="2" Grid.Column="3" Click="Screenshot_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/screenshot.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Captura de Tela" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Quarta linha de ícones -->
+                <Button Grid.Row="3" Grid.Column="0" Click="PowerPoint_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/powerpoint.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="PowerPoint" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="3" Grid.Column="1" Click="Word_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/word.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Word" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="3" Grid.Column="2" Click="Excel_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/excel.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Excel" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="3" Grid.Column="3" Click="Encyclopedia_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/encyclopedia.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Enciclopédia" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Quinta linha de ícones -->
+                <Button Grid.Row="4" Grid.Column="0" Click="Translator_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/translator.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Tradutor" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Row="4" Grid.Column="1" Click="Browser_Click" Style="{StaticResource FlatButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/browser.png" Width="37.5" Height="37.5"/>
+                        <TextBlock Text="Navegador" HorizontalAlignment="Center" FontSize="7.5"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
